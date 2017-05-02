@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ceon.clickergame.MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/background"
+        android:id="@+id/background"
+        android:scaleType="fitXY"
+        android:minHeight="300dp"
+        android:minWidth="500dp"
+        android:cropToPadding="false"
+        android:adjustViewBounds="false"
+        android:clickable="false"
+        android:contextClickable="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:id="@+id/hero_list"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/background"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:headerDividersEnabled="false"
+        android:dividerHeight="10dp"
+        android:background="@color/colorAccent" />
+
+    <TextView
+        android:text="Enemy HP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/enemy_hp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/background_light"
+        android:layout_above="@+id/hero_list"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="9dp" />
+
+    <TextView
+        android:text="Money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/player_money"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textColor="@android:color/background_light"
+        android:layout_alignTop="@+id/gold_image"
+        android:layout_toRightOf="@+id/gold_image"
+        android:layout_toEndOf="@+id/gold_image" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/enemy1"
+        android:id="@+id/enemy_image"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:elevation="0dp"
+        android:minWidth="150dp"
+        android:minHeight="150dp"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        android:layout_marginBottom="8dp"
+        android:layout_above="@+id/enemy_hp_bar"
+        android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/enemy_hp_bar"
+        android:minWidth="150dp"
+        android:minHeight="20dp"
+        android:clickable="false"
+        android:maxHeight="20dp"
+        android:max="100"
+        android:progress="100"
+        android:visibility="visible"
+        android:progressDrawable="@android:drawable/progress_horizontal"
+        android:indeterminate="false"
+        android:layout_above="@+id/enemy_hp"
+        android:layout_alignLeft="@+id/enemy_image"
+        android:layout_alignStart="@+id/enemy_image"
+        android:progressTint="@android:color/holo_red_dark" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/dps"
+        android:id="@+id/follower_image"
+        android:background="@android:color/transparent"
+        android:minWidth="20dp"
+        android:minHeight="20dp"
+        android:maxHeight="20dp"
+        android:maxWidth="20dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_below="@+id/gold_image"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Click Damage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/player_click_damage"
+        android:textColor="@android:color/background_light"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignLeft="@+id/player_f_dps"
+        android:layout_alignStart="@+id/player_f_dps" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enemy's Name"
+        android:id="@+id/enemy_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/background_light"
+        android:layout_marginBottom="8dp"
+        android:textSize="18sp"
+        android:layout_above="@+id/enemy_image"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/clicker"
+        android:id="@+id/imageView"
+        android:scaleType="fitXY"
+        android:maxHeight="20dp"
+        android:maxWidth="20dp"
+        android:minHeight="20dp"
+        android:minWidth="20dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:layout_below="@+id/follower_image"
+        android:layout_alignLeft="@+id/follower_image"
+        android:layout_alignStart="@+id/follower_image" />
+
+    <TextView
+        android:text="Follower DPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/player_f_dps"
+        android:textColor="@android:color/background_light"
+        android:elevation="24dp"
+        android:adjustViewBounds="true"
+        android:layout_above="@+id/imageView"
+        android:layout_alignLeft="@+id/player_money"
+        android:layout_alignStart="@+id/player_money" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gold_image"
+        app:srcCompat="@drawable/coin"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent"
+        android:minWidth="20dp"
+        android:minHeight="20dp"
+        android:maxWidth="20dp"
+        android:maxHeight="20dp"
+        android:layout_alignTop="@+id/zone"
+        android:layout_alignLeft="@+id/follower_image"
+        android:layout_alignStart="@+id/follower_image" />
+
+    <TextView
+        android:text="Zone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zone"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_above="@+id/req_kills"
+        android:layout_alignLeft="@+id/enemy_name"
+        android:layout_alignStart="@+id/enemy_name" />
+
+    <TextView
+        android:text="Req Kills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/req_kills"
+        android:textColor="@android:color/background_light"
+        android:layout_above="@+id/enemy_name"
+        android:layout_alignLeft="@+id/enemy_hp"
+        android:layout_alignStart="@+id/enemy_hp" />
+
+</RelativeLayout>
