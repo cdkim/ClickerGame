@@ -32,7 +32,6 @@ import java.lang.Math;
 
 import android.os.Handler;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Hero> heroes = new ArrayList<Hero>();
